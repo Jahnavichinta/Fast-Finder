@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+.app-container {
+    display: flex;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.left-panel, .right-panel {
+    overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.left-panel {
+    background-color: #86AB89;
+    display: flex;
+    flex-direction: column;  
+    justify-content: flex-start;  
+    align-items: center;
+    padding: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-container {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.search-results {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 450px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-results li {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.search-results li:hover {
+    background-color: #f0f0f0;
+}
+
+.country-info h4 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.right-panel {
+    border-left: 1px solid #ccc;
+    padding: 20px;
+    flex: 1;
+}
+
+.resizer {
+    width: 5px;
+    cursor: ew-resize;
+    background-color: #ddd;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    z-index: 1;
+    position: relative;
+}
+
+.resizer-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 5px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    display: none; 
+    font-size: 12px;
+}
+
+.resizer:hover .resizer-tooltip {
+    display: block; 
+}
+
+.country-details {
+    background-color: #424a6d;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: white;
 }
